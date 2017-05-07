@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'files'
+    'files',
+    'profiles',
+    'corsheaders'
 
 ]
 
@@ -50,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'django_accounts.urls'
@@ -125,3 +128,14 @@ STATIC_URL = '/static/'
 
 MEDIA_URL='/media/'
 MEDIA_ROOT= os.path.abspath(os.path.join(BASE_DIR, '../media'))
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT=587
+EMAIL_HOST_USER = 'nilnandyola@gmail.com'
+EMAIL_HOST_PASSWORD = '1a2s3d4fv'
+EMAIL_USE_TLS   = True
+DEFAULT_EMAIL_FROM = 'nilnandyola@gmail.com'
+
+#rest api variables
+CORS_ORIGIN_ALLOW_ALL=True
